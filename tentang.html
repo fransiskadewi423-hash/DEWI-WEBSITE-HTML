@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Tentang Sekolah</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+/* BACKGROUND */
+body{
+  background: url("bct.jpg") no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* OVERLAY */
+.overlay{
+  min-height:100vh;
+  background: rgba(0,0,0,0.3);
+  padding: 20px 15px;
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 6%;
+  background:white;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+.logo{
+  font-weight:bold;
+  font-size:18px;
+}
+
+/* MENU */
+.menu{
+  list-style:none;
+  display:flex;
+  gap:15px;
+}
+
+.menu li{
+  position:relative;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+  padding:6px 10px;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+.menu a:hover{
+  background:rgba(0,0,0,0.1);
+}
+
+/* DROPDOWN */
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  background:white;
+  top:35px;
+  left:0;
+  min-width:130px;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.dropdown-menu li a{
+  display:block;
+  padding:10px;
+}
+
+.dropdown:hover .dropdown-menu{
+  display:block;
+}
+
+/* RUNNING TEXT */
+.running-box{
+  width:100%;
+  overflow:hidden;
+  background: rgba(255,255,255,0.8);
+  border-radius:20px;
+  padding:8px 0;
+  margin-bottom:20px;
+}
+
+.running-text{
+  display:inline-block;
+  white-space:nowrap;
+  font-weight:bold;
+  font-size:16px;
+  color:#333;
+  padding-left:100%;
+  animation: jalan 12s linear infinite;
+}
+
+@keyframes jalan{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-100%); }
+}
+
+/* CONTAINER */
+.container{
+  max-width:1000px;
+  margin:auto;
+}
+
+/* CARD */
+.card{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  margin-bottom:25px;
+}
+
+h1,h2{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+p{
+  line-height:1.8;
+  text-align:justify;
+}
+
+/* VISI MISI */
+.visi-misi{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.box{
+  background:#f8f9ff;
+  padding:20px;
+  border-radius:12px;
+}
+
+/* JURUSAN */
+.jurusan{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.item{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+.item h3{
+  color:#6c63ff;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 25px;
+  background:#6c63ff;
+  color:white;
+  text-decoration:none;
+  border-radius:25px;
+}
+
+.btn:hover{
+  background:#5548c8;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  color:white;
+  margin-top:25px;
+  font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<!-- NAVBAR -->
+<nav>
+
+  <div class="logo">💖 Dewi Fransiska</div>
+
+  <ul class="menu">
+
+    <li><a href="index.html">🏠 Home</a></li>
+
+    <li class="dropdown">
+      <a href="#">🖼️ Galeri ▾</a>
+
+      <ul class="dropdown-menu">
+        <li><a href="galeri foto.html">📷 Foto</a></li>
+        <li><a href="galeri video.html">🎬 Video</a></li>
+      </ul>
+    </li>
+
+    <li><a href="tentang.html">ℹ️ Tentang</a></li>
+    <li><a href="contact.html">📞 Kontak</a></li>
+
+  </ul>
+
+</nav>
+
+<!-- RUNNING TEXT -->
+<div class="running-box">
+  <div class="running-text">
+    📘 Selamat Datang di Halaman Tentang SMK Negeri 3 Gunungsitoli 💙
+  </div>
+</div>
+
+<div class="container">
+
+<!-- TENTANG -->
+<div class="card">
+
+<h1>Tentang Sekolah Saya</h1>
+
+<p>
+SMK Negeri 3 Gunungsitoli adalah sekolah menengah kejuruan negeri
+yang berlokasi di Kota Gunungsitoli, Provinsi Sumatera Utara.
+Sekolah ini bertujuan untuk menghasilkan lulusan yang terampil,
+berkarakter, dan siap bersaing di dunia kerja.
+</p>
+
+<p>
+Dengan tenaga pendidik profesional serta fasilitas memadai,
+sekolah ini membentuk generasi muda yang berintegritas,
+disiplin, dan kreatif.
+</p>
+
+<center>
+<a href="index.html" class="btn">← Kembali ke Home</a>
+</center>
+
+</div>
+
+<!-- VISI MISI -->
+<div class="card">
+
+<h2>Visi & Misi</h2>
+
+<div class="visi-misi">
+
+<div class="box">
+<h3>Visi</h3>
+<p>
+Mewujudkan lulusan yang beriman, berkarakter,
+kompeten, dan berdaya saing.
+</p>
+</div>
+
+<div class="box">
+<h3>Misi</h3>
+<p>
+• Meningkatkan kualitas pembelajaran<br>
+• Menanamkan disiplin kerja<br>
+• Membekali keterampilan profesional
+</p>
+</div>
+
+</div>
+</div>
+
+<!-- JURUSAN -->
+<div class="card">
+
+<h2>Program Keahlian</h2>
+
+<div class="jurusan">
+
+<div class="item">
+<h3>TKJ</h3>
+<p>Teknik Komputer dan Jaringan</p>
+</div>
+
+<div class="item">
+<h3>MP</h3>
+<p>Manajemen Perkantoran</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 SMK Negeri 3 Gunungsitoli
+</footer>
+
+</div>
+
+</body>
+</html>

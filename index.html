@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portofolio Dewi</title>
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+/* BACKGROUND */
+body{
+  background:url("backgroundt.jpg") no-repeat center top;
+  background-size:cover;
+  min-height:100vh;
+  background-attachment:fixed;
+}
+
+/* OVERLAY */
+.overlay{
+  min-height:100vh;
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(6px);
+ padding-top:100px;
+}
+
+/* LOADING */
+#loading{
+  position:fixed;
+  inset:0;
+  background:#ff5ca8;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  z-index:20000;
+}
+
+.spinner{
+  width:50px;
+  height:50px;
+  border:5px solid white;
+  border-top:5px solid transparent;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg);}
+}
+
+/* NAVBAR */
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:60px;
+  background:linear-gradient(to right,#ff5ca8,#ff2f92);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 20px;
+  color:white;
+  z-index:9999;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.nav-logo{
+  font-size:20px;
+  font-weight:bold;
+}
+
+.menu-toggle{
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* MENU */
+.mobile-menu{
+  position:fixed;
+  top:60px;
+  right:0;
+  width:220px;
+  background:#ff2f92;
+  display:flex;
+  flex-direction:column;
+  transform:translateX(100%);
+  transition:0.3s;
+  z-index:10000;
+  border-radius:0 0 0 15px;
+  box-shadow:-4px 4px 15px rgba(0,0,0,0.3);
+}
+
+.mobile-menu.show{
+  transform:translateX(0);
+}
+
+.mobile-menu a{
+  color:white;
+  text-decoration:none;
+  padding:12px;
+  border-top:1px solid rgba(255,255,255,0.3);
+}
+
+.mobile-menu a:hover{
+  background:rgba(255,255,255,0.2);
+}
+
+/* DROPDOWN */
+.dropdown-btn{
+  color:white;
+  padding:12px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top:1px solid rgba(255,255,255,0.3);
+}
+
+#arrow{
+  transition:0.3s;
+}
+
+.rotate{
+  transform:rotate(180deg);
+}
+
+.dropdown-content{
+  display:none;
+  background:#ff4fa3;
+  flex-direction:column;
+}
+
+.dropdown-content a{
+  padding:10px 20px;
+}
+
+.dropdown-content.show{
+  display:flex;
+}
+
+/* CONTAINER */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+/* WELCOME */
+.welcome-box{
+  background:rgba(255,255,255,0.6);
+  border-radius:30px;
+  padding:12px 0;
+  margin:20px auto;
+  overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.welcome-text{
+  white-space:nowrap;
+  font-size:20px;
+  font-weight:bold;
+  color:black;
+  padding-left:100%;
+  animation:jalan 12s linear infinite;
+}
+
+@keyframes jalan{
+  from{transform:translateX(0);}
+  to{transform:translateX(-100%);}
+}
+
+/* ALBUM */
+.album{
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 5px 25px rgba(0,0,0,0.4);
+}
+
+/* FOTO */
+.photo{
+  margin-bottom:20px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+
+.photo img{
+  width:100%;
+  display:block;
+}
+
+/* FOTO KEREN */
+.fancy-photo{
+  position:relative;
+  background:white;
+  padding:15px 15px 40px;
+  border-radius:12px;
+  transform:rotate(-2deg);
+}
+
+.photo-text{
+  position:absolute;
+  bottom:10px;
+  left:0;
+  width:100%;
+  text-align:center;
+  background:rgba(0,0,0,0.4);
+  color:white;
+  padding:5px;
+  font-weight:bold;
+}
+
+/* LOVE */
+#love-container{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+}
+
+.love{
+  position:absolute;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(100vh);
+    opacity:0;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loading">
+  <div class="spinner"></div>
+  <p>Loading Website Dewi...</p>
+</div>
+
+<!-- LOVE -->
+<div id="love-container"></div>
+
+<!-- MUSIK -->
+<audio autoplay loop hidden>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-logo">💖 Dewi Fransiska</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<!-- MENU -->
+<div class="mobile-menu" id="mobileMenu">
+
+  <a href="home.html">Home</a>
+
+  <div class="dropdown">
+
+    <div class="dropdown-btn" onclick="toggleGaleri()">
+      Galeri <span id="arrow">▼</span>
+    </div>
+
+    <div class="dropdown-content" id="galeriMenu">
+      <a href="galeri foto.html">📸 Foto</a>
+      <a href="galeri video.html">🎬 Video</a>
+    </div>
+
+  </div>
+
+  <a href="tentang.html">Tentang</a>
+  <a href="contact.html">Kontak</a>
+
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay">
+<div class="container">
+
+<!-- WELCOME -->
+<div class="welcome-box">
+  <div class="welcome-text">
+    SELAMAT DATANG DI WEBSITE SAYA 🤍
+  </div>
+</div>
+
+<!-- ALBUM -->
+<div class="album">
+
+  <div class="photo">
+    <img src="ibu.jpg">
+  </div>
+
+  <div class="photo fancy-photo">
+    <img src="pret.jpg">
+    <div class="photo-text">Kenangan Kelas XII 💖</div>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+<script>
+
+function toggleMenu(){
+  document.getElementById("mobileMenu").classList.toggle("show");
+}
+
+function toggleGaleri(){
+  document.getElementById("galeriMenu").classList.toggle("show");
+  document.getElementById("arrow").classList.toggle("rotate");
+}
+
+window.onload=function(){
+  document.getElementById("loading").style.display="none";
+}
+
+// LOVE
+function createLove(){
+  let love=document.createElement("div");
+  love.className="love";
+  love.innerHTML="💖";
+
+  love.style.left=Math.random()*100+"vw";
+  love.style.fontSize=15+Math.random()*20+"px";
+  love.style.animationDuration=2+Math.random()*3+"s";
+
+  document.getElementById("love-container").appendChild(love);
+
+  setTimeout(()=>love.remove(),5000);
+}
+
+setInterval(createLove,300);
+
+</script>
+
+</body>
+</html>

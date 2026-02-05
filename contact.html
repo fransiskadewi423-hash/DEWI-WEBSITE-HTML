@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kontak | Dewi Fransiska</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* BODY */
+body{
+    font-family: Arial, sans-serif;
+    background: url("pin.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin:0;
+    padding:0;
+}
+
+/* CONTAINER UTAMA */
+.kontak{
+    max-width:900px;
+    margin:40px auto;
+    background: rgba(255,255,255,0.95);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* BUTTON HOME */
+.btn{
+    display:inline-block;
+    margin:20px auto;
+    background: linear-gradient(45deg,#6a5cff,#8f7bff);
+    color:white;
+    padding:12px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    opacity:0.9;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+}
+
+.header img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #6a5cff;
+    margin-bottom:10px;
+}
+
+.header h2{
+    margin:5px 0;
+}
+
+/* CONTENT */
+.container{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-top:30px;
+    background: rgba(255,255,255,0.6);
+    padding:20px;
+    border-radius:20px;
+}
+
+/* KOLOM */
+.info,.form{
+    flex:1;
+    min-width:260px;
+    background: linear-gradient(135deg,#dbeafe,#bfdbfe);
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.info:hover,.form:hover{
+    transform:translateY(-5px);
+}
+
+/* INPUT */
+input,textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+input:focus,textarea:focus{
+    outline:none;
+    border-color:#6a5cff;
+}
+
+/* BUTTON FORM */
+button{
+    background:#ff4b4b;
+    color:white;
+    border:none;
+    padding:12px;
+    width:100%;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ff2b2b;
+    transform:scale(1.03);
+}
+
+/* SOSIAL */
+.sosial a{
+    display:inline-block;
+    margin:6px;
+    padding:8px 18px;
+    background:#6a5cff;
+    color:white;
+    text-decoration:none;
+    border-radius:20px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.sosial a:hover{
+    background:#5747ff;
+    transform:scale(1.1);
+}
+
+/* MAP */
+.maps{
+    margin-top:30px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.maps iframe{
+    width:100%;
+    height:280px;
+    border:0;
+}
+
+/* FOOTER */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div style="text-align:center;">
+<a href="index.html" class="btn">← Kembali ke Home</a>
+</div>
+
+<div class="kontak">
+
+<!-- HEADER -->
+<div class="header">
+<img src="dw.jpg" alt="Dewi">
+<h2>Dewi Fransiska</h2>
+<p>Pelajar | Web Beginner 💻✨</p>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+<!-- INFO -->
+<div class="info">
+
+<h3>Profil Saya</h3>
+
+<p><b>Nama:</b> Dewi Fransiska</p>
+<p><b>Email:</b> dewifransiska668@gmail.com</p>
+<p><b>WhatsApp:</b> 0822-3572-9424</p>
+<p><b>Alamat:</b> Gunungsitoli, Sumatera Utara</p>
+
+<h3>Sosial Media</h3>
+
+<div class="sosial">
+<a href="https://wa.me/6282235729424" target="_blank">WhatsApp</a>
+
+<a href="https://www.instagram.com/dewfrns_m?igsh=MWthZXdzejVpZTllbQ==" target="_blank">
+Instagram
+</a>
+
+<a href="https://www.facebook.com/share/1BpVaQGhYx/" target="_blank">
+Facebook
+</a>
+</div>
+
+</div>
+
+<!-- FORM -->
+<div class="form">
+
+<h3>Kirim Pesan</h3>
+
+<form action="https://formsubmit.co/dewifransiska668@gmail.com" method="POST">
+
+<input type="text" name="nama" placeholder="Nama Lengkap" required>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<textarea name="pesan" rows="5" placeholder="Tulis pesan..." required></textarea>
+
+<button type="submit">Kirim Pesan</button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- MAP -->
+<div class="maps">
+
+<iframe
+src="https://www.google.com/maps?q=SMK+Negeri+3+Gunungsitoli&output=embed"
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Dewi Fransiska | Personal Website
+</footer>
+
+</body>
+</html>
